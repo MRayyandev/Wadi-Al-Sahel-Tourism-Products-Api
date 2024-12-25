@@ -1,122 +1,6 @@
-// const express = require('express');
-// const cors = require('cors');
-// const bodyParser = require('body-parser');
-// const mongoose = require('mongoose');
-
-// const app = express();
-// const PORT = 5001;
-
-// // Middleware
-// app.use(cors());
-// app.use(bodyParser.json());
-
-// // MongoDB Connection
-// mongoose.connect('mongodb://localhost:27017/productsDB', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-// })
-//     .then(() => console.log('Connected to MongoDB'))
-//     .catch((error) => console.error('MongoDB connection failed:', error.message));
-
-// // Mongoose Schema and Model
-// const productSchema = new mongoose.Schema({
-//     title: { type: String, required: true },
-//     price: { type: Number, required: true },
-//     description: { type: String, required: true },
-//     img: { type: String, required: true },
-// });
-
-// const Product = mongoose.model('Product', productSchema);
-
-// // Seed Products
-// const seedProducts = async () => {
-//     try {
-//         const existingProducts = await Product.find();
-//         if (existingProducts.length === 0) {
-//             const products = [
-//                 {
-//                     title: "iPhone 11 Pro Max",
-//                     price: 999,
-//                     description: "Apple iPhone 11 Pro with A13 Bionic chip, triple-camera system, and 5.8-inch Super Retina display.",
-//                     img: "https://tse4.mm.bing.net/th?id=OIP.hxntYXGXdm66L_u521_lpAAAAA&pid=Api&P=0&h=220"
-//                 },
-//                 {
-//                     title: "MacBook Air",
-//                     price: 1200,
-//                     description: "Apple MacBook Air with M1 chip, 13.3-inch Retina display, and 8GB RAM.",
-//                     img: "https://tse4.mm.bing.net/th?id=OIP.CxR7xx2DWXxctoX42eUzfAHaEK&pid=Api&P=0&h=220"
-//                 },
-//                 {
-//                     title: "Samsung Galaxy S21",
-//                     price: 850,
-//                     description: "Samsung Galaxy S21 with Exynos 2100, 6.2-inch AMOLED display, and 128GB storage.",
-//                     img: "https://tse4.mm.bing.net/th?id=OIP.i-VJnZag7h4IUTNb6a-7CAHaE7&pid=Api&P=0&h=220"
-//                 },
-//                 {
-//                     title: "Dell XPS 13",
-//                     price: 1300,
-//                     description: "Dell XPS 13 with Intel i7, 13.4-inch display, and 16GB RAM.",
-//                     img: "https://tse3.mm.bing.net/th?id=OIP.v_ThjZ5ZH5pLkNzduGeFzgHaE8&pid=Api&P=0&h=220"
-//                 },
-//                 {
-//                     title: "Sony WH-1000XM4",
-//                     price: 350,
-//                     description: "Sony WH-1000XM4 noise-canceling wireless headphones.",
-//                     img: "https://tse3.mm.bing.net/th?id=OIP.KeE0M-d206KUGLWZJB7oWgHaFj&pid=Api&P=0&h=220"
-//                 }
-//             ];
-
-//             await Product.insertMany(products);
-//             console.log("Sample products added to the database!");
-//         } else {
-//             console.log("Products already exist in the database!");
-//         }
-//     } catch (error) {
-//         console.error("Failed to seed products:", error.message);
-//     }
-// };
-
-// // Call the function to seed products
-// seedProducts();
-
-// // Routes
-// // Get all products
-// app.get('/api/products', async (req, res) => {
-//     try {
-//         const products = await Product.find();
-//         res.json(products);
-//     } catch (error) {
-//         res.status(500).json({ message: 'Failed to fetch products' });
-//     }
-// });
-
-// // Add a new product
-// app.post('/api/products', async (req, res) => {
-//     try {
-//         const newProduct = new Product(req.body);
-//         await newProduct.save();
-//         res.json(newProduct);
-//     } catch (error) {
-//         res.status(500).json({ message: 'Failed to add product' });
-//     }
-// });
-
-// // Start the server
-// app.listen(PORT, () => {
-//     console.log(`Server running on http://localhost:${PORT}`);
-// });
-
-
-
-
-
-
-
-
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
 
 const app = express();
 const PORT = 5000;
@@ -125,16 +9,26 @@ app.use(cors());
 app.use(bodyParser.json());
 
 let products = [
-    { id: 1, title: "iPhone 11 Pro", price: 999, description: "Apple iPhone 11 Pro with A13 Bionic chip, triple-camera system, and 5.8-inch Super Retina display.", img: "https://tse4.mm.bing.net/th?id=OIP.hxntYXGXdm66L_u521_lpAAAAA&pid=Api&P=0&h=220" },
-    { id: 2, title: "MacBook Air", price: 1200, description: "Apple MacBook Air with M1 chip, 13.3-inch Retina display, and 8GB RAM.", img: "https://tse4.mm.bing.net/th?id=OIP.CxR7xx2DWXxctoX42eUzfAHaEK&pid=Api&P=0&h=220" },
-    { id: 3, title: "Samsung Galaxy S21", price: 850, description: "Samsung Galaxy S21 with Exynos 2100, 6.2-inch AMOLED display, and 128GB storage.", img: "https://tse4.mm.bing.net/th?id=OIP.i-VJnZag7h4IUTNb6a-7CAHaE7&pid=Api&P=0&h=220" },
-    { id: 4, title: "Dell XPS 13", price: 1300, description: "Dell XPS 13 with Intel i7, 13.4-inch display, and 16GB RAM.", img: "https://tse3.mm.bing.net/th?id=OIP.v_ThjZ5ZH5pLkNzduGeFzgHaE8&pid=Api&P=0&h=220" },
-    { id: 5, title: "Sony WH-1000XM4", price: 350, description: "Sony WH-1000XM4 noise-canceling wireless headphones.", img: "https://tse3.mm.bing.net/th?id=OIP.KeE0M-d206KUGLWZJB7oWgHaFj&pid=Api&P=0&h=220" },
-    { id: 6, title: "Nintendo Switch", price: 299, description: "Nintendo Switch gaming console with detachable Joy-Con controllers.", img: "https://tse2.mm.bing.net/th?id=OIP.DoWjZW-h8ivZ-F93FKYORwHaEy&pid=Api&P=0&h=220" },
-    { id: 7, title: "GoPro Hero 9", price: 400, description: "GoPro Hero 9 action camera with 5K video recording and HyperSmooth stabilization.", img: "https://tse3.mm.bing.net/th?id=OIP.Z_2lRzlte4TKKEDYhATUpAHaEK&pid=Api&P=0&h=220" },
-    { id: 8, title: "Bose SoundLink", price: 199, description: "Bose SoundLink Bluetooth speaker with deep, powerful sound.", img: "https://tse1.mm.bing.net/th?id=OIP.qC7jTsyppCeBhG3UGUR8sgHaE8&pid=Api&P=0&h=220" },
-    { id: 9, title: "Amazon Echo Dot", price: 50, description: "Amazon Echo Dot with Alexa voice assistant.", img: "https://tse3.mm.bing.net/th?id=OIP.Ik0WzFRarbxLZsznXVRitwHaFZ&pid=Api&P=0&h=220" },
-    { id: 10, title: "Apple Watch Series 6", price: 399, description: "Apple Watch Series 6 with blood oxygen monitoring and ECG app.", img: "https://tse4.mm.bing.net/th?id=OIP.JFC1t9kN8asZxMWlzJJSzgHaEK&pid=Api&P=0&h=220" }
+    { id: 1, title: "Burj Khalifa", price: 999, description: "World's tallest building with a spectacular observation deck.", img: "https://tse4.mm.bing.net/th?id=OIP.hxntYXGXdm66L_u521_lpAAAAA&pid=Api&P=0&h=220" },
+    { id: 2, title: "Dubai Mall", price: 120, description: "Shop, dine, and enjoy the world-famous Dubai Aquarium & Underwater Zoo.", img: "https://tse4.mm.bing.net/th?id=OIP.CxR7xx2DWXxctoX42eUzfAHaEK&pid=Api&P=0&h=220" },
+    { id: 3, title: "Palm Jumeirah", price: 200, description: "An iconic man-made island featuring luxury resorts and attractions.", img: "https://tse4.mm.bing.net/th?id=OIP.i-VJnZag7h4IUTNb6a-7CAHaE7&pid=Api&P=0&h=220" },
+    { id: 4, title: "Dubai Marina", price: 150, description: "Modern waterfront with stunning skyline views and luxury dining.", img: "https://tse3.mm.bing.net/th?id=OIP.v_ThjZ5ZH5pLkNzduGeFzgHaE8&pid=Api&P=0&h=220" },
+    { id: 5, title: "Desert Safari", price: 250, description: "Experience dune bashing, camel rides, and traditional Arabic dinner.", img: "https://tse3.mm.bing.net/th?id=OIP.KeE0M-d206KUGLWZJB7oWgHaFj&pid=Api&P=0&h=220" },
+    { id: 6, title: "Dubai Frame", price: 80, description: "An architectural landmark offering panoramic views of old and new Dubai.", img: "https://tse2.mm.bing.net/th?id=OIP.DoWjZW-h8ivZ-F93FKYORwHaEy&pid=Api&P=0&h=220" },
+    { id: 7, title: "Jumeirah Beach", price: 100, description: "Relax on pristine white sand beaches with views of the Burj Al Arab.", img: "https://tse3.mm.bing.net/th?id=OIP.Z_2lRzlte4TKKEDYhATUpAHaEK&pid=Api&P=0&h=220" },
+    { id: 8, title: "Global Village", price: 50, description: "Explore cultures and cuisines from around the world in one place.", img: "https://tse1.mm.bing.net/th?id=OIP.qC7jTsyppCeBhG3UGUR8sgHaE8&pid=Api&P=0&h=220" },
+    { id: 9, title: "Miracle Garden", price: 70, description: "A vibrant garden featuring unique floral displays and designs.", img: "https://tse3.mm.bing.net/th?id=OIP.Ik0WzFRarbxLZsznXVRitwHaFZ&pid=Api&P=0&h=220" },
+    { id: 10, title: "Ain Dubai", price: 150, description: "World's largest observation wheel with breathtaking views of Dubai.", img: "https://tse4.mm.bing.net/th?id=OIP.JFC1t9kN8asZxMWlzJJSzgHaEK&pid=Api&P=0&h=220" },
+    { id: 11, title: "Ski Dubai", price: 200, description: "Indoor skiing experience with snowboarding and penguin encounters.", img: "https://tse3.mm.bing.net/th?id=OIP.SkiDubaiImage&pid=Api&P=0&h=220" },
+    { id: 12, title: "Dubai Opera", price: 300, description: "Cultural performances in a modern architectural masterpiece.", img: "https://tse4.mm.bing.net/th?id=OIP.DubaiOperaImage&pid=Api&P=0&h=220" },
+    { id: 13, title: "Al Fahidi Historical District", price: 50, description: "Explore Dubai's rich history and traditional architecture.", img: "https://tse3.mm.bing.net/th?id=OIP.AlFahidiImage&pid=Api&P=0&h=220" },
+    { id: 14, title: "Dubai Fountain", price: 60, description: "Watch the world's largest choreographed fountain system.", img: "https://tse2.mm.bing.net/th?id=OIP.DubaiFountainImage&pid=Api&P=0&h=220" },
+    { id: 15, title: "The Lost Chambers Aquarium", price: 120, description: "Discover marine life in Atlantis The Palm's stunning aquarium.", img: "https://tse4.mm.bing.net/th?id=OIP.LostChambersImage&pid=Api&P=0&h=220" },
+    { id: 16, title: "IMG Worlds of Adventure", price: 350, description: "Enjoy thrilling rides in the world's largest indoor theme park.", img: "https://tse3.mm.bing.net/th?id=OIP.IMGWorldsImage&pid=Api&P=0&h=220" },
+    { id: 17, title: "Legoland Dubai", price: 250, description: "A fun-filled theme park for families and kids.", img: "https://tse2.mm.bing.net/th?id=OIP.LegolandImage&pid=Api&P=0&h=220" },
+    { id: 18, title: "Dubai Butterfly Garden", price: 40, description: "Explore thousands of colorful butterflies in a lush garden.", img: "https://tse3.mm.bing.net/th?id=OIP.ButterflyGardenImage&pid=Api&P=0&h=220" },
+    { id: 19, title: "Dubai Creek", price: 70, description: "Traditional dhow cruises and a glimpse into Dubai's history.", img: "https://tse4.mm.bing.net/th?id=OIP.DubaiCreekImage&pid=Api&P=0&h=220" },
+    { id: 20, title: "The Green Planet", price: 100, description: "An indoor tropical rainforest with exotic plants and animals.", img: "https://tse1.mm.bing.net/th?id=OIP.GreenPlanetImage&pid=Api&P=0&h=220" }
 ];
 
 app.get('/api/products', (req, res) => {
@@ -151,4 +45,3 @@ app.post('/api/products', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
-
