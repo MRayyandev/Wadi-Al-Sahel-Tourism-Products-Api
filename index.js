@@ -14,7 +14,7 @@ let activities = [
         title: "Burj Khalifa",
         price: 999,
         description: "World's tallest building with a spectacular observation deck.",
-        image: "https://luxeadventuretraveler.com/wp-content/uploads/2012/12/Luxe-Adventure-Traveler-Dubai-Burj-Khalifa-6.jpg",
+        image: "https://plus.unsplash.com/premium_photo-1694475631307-0f0a85924605?q=80&w=1445&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         duration: "2 hours",
         location: "Downtown Dubai",
         category: "Sightseeing"
@@ -34,7 +34,7 @@ let activities = [
         title: "Palm Jumeirah",
         price: 200,
         description: "An iconic man-made island featuring luxury resorts and attractions.",
-        image: "https://res.cloudinary.com/dlpphqtnj/image/upload/v1734949053/aerial-view-of-dubai-palm-jumeirah-island-united-arab-emirates_hw21kl.jpg",
+        image: "https://res.cloudinary.com/dlpphqtnj/image/upload/v1734949013/the-palm-island-panorama-with-dubai-marina-in-the-background-aerial_g712l8.jpg",
         duration: "3 hours",
         location: "Palm Jumeirah",
         category: "Sightseeing"
@@ -184,7 +184,7 @@ let activities = [
         title: "Dubai Butterfly Garden",
         price: 40,
         description: "Explore thousands of colorful butterflies in a lush garden.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn5J_zKwMajyAG0eDWjc5utNAKKKZamQkcNQ&s",
+        image: "https://vacatis.com/wp-content/uploads/2023/12/Expect-at-Dubai-Butterfly-Garden.webp",
         duration: "1.5 hours",
         location: "Dubailand, Dubai",
         category: "Nature"
@@ -194,7 +194,7 @@ let activities = [
         title: "Dubai Creek",
         price: 70,
         description: "Traditional dhow cruises and a glimpse into Dubai's history.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6KVbHCh1ktfs0iUNZJnv0lVxk9QG6M30_w&s",
+        image: "https://www.dm.gov.ae/wp-content/uploads/2024/02/DM-initiates-project-to-develop-Dubai-Creek-pier-and-upgrade-support-walls.jpg.webp",
         duration: "2 hours",
         location: "Dubai Creek",
         category: "Heritage"
