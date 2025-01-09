@@ -11,203 +11,363 @@ app.use(bodyParser.json());
 let activities = [
     {
         id: 1,
-        title: "Burj Khalifa",
+        title: "Morning Desert Safari",
+        price: 450,
+        description: "Dawn desert adventure with dune bashing, camel riding, and Arabian breakfast.",
+        image: "https://res.cloudinary.com/dtljonz0f/image/upload/c_auto,ar_3:1,w_3840,g_auto/f_auto/q_auto/MORNING_SAFARI_CAMEL_RIDING_x6cdes?_a=BAVARSAP0",
+        duration: "4 hours",
+        location: "Dubai Desert Conservation Reserve",
+        category: "Adventure"
+    },
+    {
+        id: 2,
+        title: "Dune Buggy Safari",
+        price: 500,
+        description: "Thrilling dune buggy ride through Dubai's golden desert landscape.",
+        image: "https://d1i3enf1i5tb1f.cloudfront.net/assets/img/BDS/dune-buggy-in-dubai.jpg",
+        duration: "3 hours",
+        location: "Dubai Desert Conservation Reserve",
+        category: "Adventure"
+    },
+    {
+        id: 3,
+        title: "Desert Safari With Quad Bike",
+        price: 220,
+        description: "Quad biking adventure combined with traditional desert activities.",
+        image: "https://dubaideserttour.ae/assets/img/gallery/morning-desert-safari-quad-bike-4.jpg",
+        duration: "5 hours",
+        location: "Dubai Desert Conservation Reserve",
+        category: "Adventure"
+    },
+    {
+        id: 4,
+        title: "Evening Desert Safari Dubai",
+        price: 300,
+        description: "Sunset desert experience with BBQ dinner and traditional entertainment.",
+        image: "https://res.cloudinary.com/dlpphqtnj/image/upload/v1734945881/photo-1549944850-84e00be4203b_mre5fr.jpg",
+        duration: "6 hours",
+        location: "Dubai Desert Conservation Reserve",
+        category: "Adventure"
+    },
+    {
+        id: 5,
+        title: "Burj Khalifa At The Top",
         price: 999,
-        description: "World's tallest building with a spectacular observation deck.",
+        description: "World's tallest building observation deck with panoramic Dubai views.",
         image: "https://plus.unsplash.com/premium_photo-1694475631307-0f0a85924605?q=80&w=1445&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         duration: "2 hours",
         location: "Downtown Dubai",
         category: "Sightseeing"
     },
     {
-        id: 2,
-        title: "Dubai Mall",
+        id: 6,
+        title: "Dubai City Tour in Limousine",
+        price: 320,
+        description: "Luxury city tour visiting Dubai's iconic landmarks in a premium limousine.",
+        image: "https://res.cloudinary.com/dlpphqtnj/image/upload/v1734950356/1f_lxppcz.jpg",
+        duration: "4 hours",
+        location: "Dubai City",
+        category: "Luxury"
+    },
+    {
+        id: 7,
+        title: "Dubai Mall Experience",
         price: 120,
-        description: "Shop, dine, and enjoy the world-famous Dubai Aquarium & Underwater Zoo.",
+        description: "World's largest mall with shopping, Dubai Aquarium, and entertainment.",
         image: "https://media.istockphoto.com/id/1269123939/photo/dubai-mall-main-entrance-with-burj-khalifa-in-rising-in-the-background.jpg?s=612x612&w=0&k=20&c=dUvtoXLbNDC2IDoIFqMjqch-s3yTumveHmEv8hHrtmM=",
         duration: "4 hours",
         location: "Downtown Dubai",
         category: "Shopping"
     },
     {
-        id: 3,
-        title: "Palm Jumeirah",
+        id: 8,
+        title: "Palm Jumeirah Tour",
         price: 200,
-        description: "An iconic man-made island featuring luxury resorts and attractions.",
-        image: "https://res.cloudinary.com/dlpphqtnj/image/upload/v1734949013/the-palm-island-panorama-with-dubai-marina-in-the-background-aerial_g712l8.jpg",
+        description: "Explore Dubai's iconic man-made island and its luxury attractions.",
+        image: "https://royalarabian.com/wp-content/uploads/2021/12/Palm-Jumeirah.jpg.webp",
         duration: "3 hours",
         location: "Palm Jumeirah",
         category: "Sightseeing"
     },
     {
-        id: 4,
-        title: "Dubai Marina",
+        id: 9,
+        title: "Dubai Marina Walk & Dinner Cruise",
         price: 150,
-        description: "Modern waterfront with stunning skyline views and luxury dining.",
-        image: "https://www.barcelo.com/guia-turismo/wp-content/uploads/2022/03/dubai-marina-pal.jpg",
-        duration: "2 hours",
+        description: "Waterfront walk and dinner cruise in Dubai Marina.",
+        image: "https://cdn.iticket.az/venue/v5_cover/eap2ASC7C7zgw4Wtcg8BaTuGbYeERYuN.png",
+        duration: "4 hours",
         location: "Dubai Marina",
         category: "Leisure"
     },
     {
-        id: 5,
-        title: "Desert Safari",
-        price: 250,
-        description: "Experience dune bashing, camel rides, and traditional Arabic dinner.",
-        image: "https://res.cloudinary.com/dlpphqtnj/image/upload/v1734949406/40_ksyogr.jpg",
-        duration: "6 hours",
-        location: "Dubai Desert Conservation Reserve",
-        category: "Adventure"
-    },
-    {
-        id: 6,
-        title: "Dubai Frame",
+        id: 10,
+        title: "Dubai Frame Visit",
         price: 80,
-        description: "An architectural landmark offering panoramic views of old and new Dubai.",
-        image: "https://i.pinimg.com/736x/c2/33/6a/c2336af74bece424b2e1e16814b34660.jpg",
+        description: "Iconic golden frame with views of old and new Dubai.",
+        image: "https://media1.thrillophilia.com/filestore/6k89okl90llxkpaivdaorrog17ep_Dubai_Frame_2a468cf635.jpg?w=400&dpr=2",
         duration: "1.5 hours",
-        location: "Zabeel Park, Dubai",
+        location: "Zabeel Park",
         category: "Sightseeing"
     },
     {
-        id: 7,
-        title: "Jumeirah Beach",
+        id: 11,
+        title: "Jumeirah Beach Day",
         price: 100,
-        description: "Relax on pristine white sand beaches with views of the Burj Al Arab.",
-        image: "https://img.freepik.com/premium-photo/jumeirah-beach-dubai-sunset_1033579-183514.jpg",
-        duration: "3 hours",
-        location: "Jumeirah, Dubai",
+        description: "Beach day with Burj Al Arab views, includes lounger and umbrella.",
+        image: "https://assets.hiltonstatic.com/hilton-asset-cache/image/upload/c_fill,w_1920,h_1080,q_70,f_auto,g_auto/Imagery/Property%20Photography/Hilton%20International/D/DXBJBHI/DXBJB_HiltonDubaiJumeirah_BeachView.jpg",
+        duration: "Full Day",
+        location: "Jumeirah Beach",
         category: "Leisure"
     },
     {
-        id: 8,
-        title: "Global Village",
+        id: 12,
+        title: "Aquaventure Waterpark",
+        price: 300,
+        description: "World's largest waterpark with thrilling slides and marine encounters.",
+        image: "https://www.holysmithereens.com/wp-content/uploads/2016/06/atlantis-dubai-1024x529.jpg",
+        duration: "Full Day",
+        location: "Atlantis The Palm",
+        category: "Adventure"
+    },
+    {
+        id: 13,
+        title: "Wild Wadi Waterpark",
+        price: 220,
+        description: "Premier waterpark featuring 30 rides and attractions.",
+        image: "https://www.puredestinations.co.uk/wp-content/uploads/2016/01/Wild-Wadi-Water-Park-Dubai-Holidays-.jpg",
+        duration: "Full Day",
+        location: "Jumeirah",
+        category: "Adventure"
+    },
+    {
+        id: 14,
+        title: "Global Village Experience",
         price: 50,
-        description: "Explore cultures and cuisines from around the world in one place.",
+        description: "Cultural festival park with pavilions from 90+ countries.",
         image: "https://d19r6u3d126ojb.cloudfront.net/medium_rent_a_car_Global_Village_5279bbbe35.webp",
         duration: "4 hours",
         location: "Sheikh Mohammed Bin Zayed Road",
         category: "Entertainment"
     },
     {
-        id: 9,
-        title: "Miracle Garden",
+        id: 15,
+        title: "Dubai Miracle Garden",
         price: 70,
-        description: "A vibrant garden featuring unique floral displays and designs.",
+        description: "World's largest natural flower garden with artistic displays.",
         image: "https://res.cloudinary.com/dlpphqtnj/image/upload/v1734951266/170509135336-dubai-miracle-garden---butterfly-display_20190513170550_vyexra.jpg",
         duration: "2 hours",
-        location: "Al Barsha South, Dubai",
+        location: "Al Barsha South",
         category: "Nature"
     },
     {
-        id: 10,
-        title: "Ain Dubai",
+        id: 16,
+        title: "Ain Dubai Experience",
         price: 150,
-        description: "World's largest observation wheel with breathtaking views of Dubai.",
+        description: "World's largest observation wheel with Dubai skyline views.",
         image: "https://www.hoteliermiddleeast.com/cloud/2022/03/15/Ain-Dubai-2.jpg",
         duration: "1 hour",
         location: "Bluewaters Island",
         category: "Sightseeing"
     },
     {
-        id: 11,
+        id: 17,
+        title: "Ferrari World Abu Dhabi",
+        price: 350,
+        description: "Theme park with world's fastest roller coaster and Ferrari experiences.",
+        image: "https://res.cloudinary.com/dlpphqtnj/image/upload/v1734948466/95_zcneev.jpg",
+        duration: "Full Day",
+        location: "Yas Island, Abu Dhabi",
+        category: "Adventure"
+    },
+    {
+        id: 18,
         title: "Ski Dubai",
         price: 200,
-        description: "Indoor skiing experience with snowboarding and penguin encounters.",
+        description: "Indoor ski resort with real snow, slopes, and penguin encounters.",
         image: "https://media1.thrillophilia.com/filestore/mo1q247s7pmlc1kicci4u26oim3h_Ski_Dubai_b4fc550a28.jpg",
         duration: "3 hours",
         location: "Mall of the Emirates",
         category: "Adventure"
     },
     {
-        id: 12,
-        title: "Dubai Opera",
+        id: 19,
+        title: "Dubai Opera Show",
         price: 300,
-        description: "Cultural performances in a modern architectural masterpiece.",
+        description: "World-class performances in Dubai's premier entertainment venue.",
         image: "https://www.visitdubai.com/-/media/gathercontent/poi/d/dubai-opera/fallback-image/dubai-opera.jpg",
         duration: "2.5 hours",
         location: "Downtown Dubai",
         category: "Cultural"
     },
     {
-        id: 13,
-        title: "Al Fahidi Historical District",
-        price: 50,
-        description: "Explore Dubai's rich history and traditional architecture.",
-        image: "https://www.cuddlynest.com/blog/wp-content/uploads/2024/06/Al-Fahidi-Historical-Neighbourhood-4.jpg",
-        duration: "2 hours",
-        location: "Al Fahidi, Dubai",
-        category: "History"
+        id: 20,
+        title: "Sheikh Zayed Grand Mosque Tour",
+        price: 80,
+        description: "Stunning mosque with Islamic architecture and gardens.",
+        image: "https://res.cloudinary.com/dlpphqtnj/image/upload/v1734949312/landscape-4191991_960_720_hqbcag.jpg",
+        duration: "3 hours",
+        location: "Abu Dhabi",
+        category: "Cultural"
     },
     {
-        id: 14,
-        title: "Dubai Fountain",
+        id: 21,
+        title: "Al Fahidi Historical District Tour",
+        price: 50,
+        description: "Historic Dubai district with traditional architecture and culture.",
+        image: "https://www.cuddlynest.com/blog/wp-content/uploads/2024/06/Al-Fahidi-Historical-Neighbourhood-4.jpg",
+        duration: "2 hours",
+        location: "Bur Dubai",
+        category: "Heritage"
+    },
+    {
+        id: 22,
+        title: "BAPS Hindu Mandir Visit",
+        price: 100,
+        description: "First traditional Hindu stone temple in the Middle East.",
+        image: "https://api.factmagazines.com/wp-content/uploads/2024/02/BAPS-Hindu-Mandir-Abu-Dhabi-002.jpg",
+        duration: "2 hours",
+        location: "Abu Dhabi",
+        category: "Cultural"
+    },
+    {
+        id: 23,
+        title: "Dubai Fountain Show",
         price: 60,
-        description: "Watch the world's largest choreographed fountain system.",
+        description: "World's largest choreographed fountain system with music show.",
         image: "https://cdn.shopify.com/s/files/1/0910/2272/files/outdoor-4_e526f663-b1af-46e1-8501-e8ed443576ba_1024x1024.jpg?1544608127490762974",
         duration: "30 minutes",
         location: "Downtown Dubai",
         category: "Entertainment"
     },
     {
-        id: 15,
-        title: "The Lost Chambers Aquarium",
+        id: 24,
+        title: "Lost Chambers Aquarium",
         price: 120,
-        description: "Discover marine life in Atlantis The Palm's stunning aquarium.",
+        description: "Underwater mazes with 65,000 marine creatures in Atlantis theme.",
         image: "https://dubaitickets.tours/wp-content/uploads/2023/04/lost-chambers-ticket-1.jpg",
         duration: "2 hours",
         location: "Atlantis The Palm",
         category: "Nature"
     },
     {
-        id: 16,
-        title: "IMG Worlds of Adventure",
+        id: 25,
+        title: "Warner Bros. World Abu Dhabi",
         price: 350,
-        description: "Enjoy thrilling rides in the world's largest indoor theme park.",
-        image: "https://www.dwtraveluae.com/wp-content/uploads/2023/09/IMG-World-Tickets-Only.jpg",
-        duration: "5 hours",
-        location: "Sheikh Mohammed Bin Zayed Road",
-        category: "Adventure"
+        description: "Indoor theme park with six Warner Bros. themed lands.",
+        image: "https://thetravelmum.com/content/uploads/2024/09/Warner-Bros-World-Abu-Dhabi-60-1024x768.jpg-1.webp",
+        duration: "Full Day",
+        location: "Yas Island, Abu Dhabi",
+        category: "Entertainment"
     },
     {
-        id: 17,
+        id: 26,
+        title: "IMG Worlds of Adventure",
+        price: 350,
+        description: "World's largest indoor theme park with Marvel and Cartoon Network zones.",
+        image: "https://www.dwtraveluae.com/wp-content/uploads/2023/09/IMG-World-Tickets-Only.jpg",
+        duration: "Full Day",
+        location: "Dubai",
+        category: "Entertainment"
+    },
+    {
+        id: 27,
         title: "Legoland Dubai",
         price: 250,
-        description: "A fun-filled theme park for families and kids.",
+        description: "Family theme park with 40+ rides and building experiences.",
         image: "https://image.kkday.com/v2/image/get/w_1900%2Cc_fit%2Cq_55/s1.kkday.com/product_33303/20200820211316_QaFxg/jpg",
-        duration: "4 hours",
+        duration: "Full Day",
         location: "Dubai Parks and Resorts",
         category: "Family"
     },
     {
-        id: 18,
+        id: 28,
         title: "Dubai Butterfly Garden",
         price: 40,
-        description: "Explore thousands of colorful butterflies in a lush garden.",
+        description: "World's largest covered butterfly garden with 15,000+ butterflies.",
         image: "https://vacatis.com/wp-content/uploads/2023/12/Expect-at-Dubai-Butterfly-Garden.webp",
         duration: "1.5 hours",
-        location: "Dubailand, Dubai",
+        location: "Al Barsha",
         category: "Nature"
     },
     {
-        id: 19,
-        title: "Dubai Creek",
+        id: 29,
+        title: "Dubai Creek Heritage Tour",
         price: 70,
-        description: "Traditional dhow cruises and a glimpse into Dubai's history.",
+        description: "Traditional abra boat tour with Gold and Spice Souk visits.",
         image: "https://www.dm.gov.ae/wp-content/uploads/2024/02/DM-initiates-project-to-develop-Dubai-Creek-pier-and-upgrade-support-walls.jpg.webp",
-        duration: "2 hours",
-        location: "Dubai Creek",
+        duration: "3 hours",
+        location: "Deira",
         category: "Heritage"
     },
     {
-        id: 20,
-        title: "The Green Planet",
+        id: 30,
+        title: "Dubai Marina Dinner Cruise",
         price: 100,
-        description: "An indoor tropical rainforest with exotic plants and animals.",
+        description: "Luxury dinner cruise with Dubai Marina skyline views.",
+        image: "https://www.shouf.io/cdn/shop/products/Dinnercruisehero-799403_750x.jpg?v=1712005394",
+        duration: "2 hours",
+        location: "Dubai Marina",
+        category: "Leisure"
+    },
+    {
+        id: 31,
+        title: "Dubai Water Canal Cruise",
+        price: 100,
+        description: "Scenic cruise through Dubai Water Canal with city views.",
+        image: "https://www.dubaitraveltourism.com/assets/images/tours/gallery/gallery-01698317080-dubai-new-year-burj-khalifa-cruise-lgf.jpg",
+        duration: "2 hours",
+        location: "Dubai Water Canal",
+        category: "Leisure"
+    },
+    {
+        id: 32,
+        title: "The Green Planet Dubai",
+        price: 50,
+        description: "Indoor rainforest with 3,000+ plants and animals.",
         image: "https://mid-east.info/wp-content/uploads/2021/10/green-planet.jpg",
-        duration: "3 hours",
-        location: "City Walk, Dubai",
+        duration: "2 hours",
+        location: "City Walk",
         category: "Nature"
+    },
+    {
+        id: 33,
+        title: "Louvre Abu Dhabi",
+        price: 80,
+        description: "First universal museum in the Arab world with iconic architecture.",
+        image: "https://d1i3enf1i5tb1f.cloudfront.net/Tour-Images/false-5185/Louvre-Abu-Dhabi-museum.jpg",
+        duration: "3 hours",
+        location: "Saadiyat Island, Abu Dhabi",
+        category: "Cultural"
+    },
+    {
+        id: 34,
+        title: "Qasr Al Hosn",
+        price: 50,
+        description: "Abu Dhabi's oldest stone building and historical museum.",
+        image: "https://d1i3enf1i5tb1f.cloudfront.net/Tour-Images/false-486473/QASR.jpg",
+        duration: "2 hours",
+        location: "Abu Dhabi",
+        category: "Heritage"
+    },
+    {
+        id: 35,
+        title: "Museum of the Future",
+        price: 145,
+        description: "Innovative museum exploring future technology and sustainability.",
+        image: "https://res.cloudinary.com/dlpphqtnj/image/upload/v1734948521/Untitled-design-78_scxghb.jpg",
+        duration: "2-3 hours",
+        location: "Sheikh Zayed Road",
+        category: "Cultural"
+    },
+    {
+        id: 36,
+        title: "Dubai Garden Glow",
+        price: 65,
+        description: "Illuminated garden park with LED sculptures and dinosaur park.",
+        image: "https://collectyourticket.com/uploads/0000/1/2023/09/19/glow-garden-ticket-6.jpg",
+        duration: "2 hours",
+        location: "Zabeel Park",
+        category: "Entertainment"
     }
 ];
 
@@ -221,7 +381,7 @@ app.post('/api/activities', (req, res) => {
     const { title, price, description, image, duration, location, category } = req.body;
 
     if (!title || !price || !description || !image || !duration || !location || !category) {
-        return res.status(400).json({ error: "All fields (title, price, description, image, duration, location, category) are required." });
+        return res.status(400).json({ message: "All fields are required" });
     }
 
     const newActivity = {
@@ -236,11 +396,38 @@ app.post('/api/activities', (req, res) => {
     };
 
     activities.push(newActivity);
-    res.json(newActivity);
+    res.status(201).json(newActivity);
 });
 
-// Start the server
+// Update an existing activity
+app.put('/api/activities/:id', (req, res) => {
+    const { id } = req.params;
+    const { title, price, description, image, duration, location, category } = req.body;
+
+    const activity = activities.find(a => a.id == id);
+
+    if (!activity) {
+        return res.status(404).json({ message: "Activity not found" });
+    }
+
+    activity.title = title || activity.title;
+    activity.price = price || activity.price;
+    activity.description = description || activity.description;
+    activity.image = image || activity.image;
+    activity.duration = duration || activity.duration;
+    activity.location = location || activity.location;
+    activity.category = category || activity.category;
+
+    res.json(activity);
+});
+
+// Delete an activity
+app.delete('/api/activities/:id', (req, res) => {
+    const { id } = req.params;
+    activities = activities.filter(a => a.id != id);
+    res.status(204).json();
+});
+
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
-
